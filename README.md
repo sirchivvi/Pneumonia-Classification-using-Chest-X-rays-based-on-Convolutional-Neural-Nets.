@@ -77,11 +77,6 @@ model = models.Sequential([
 Results
 
 The model achieves:
-
-    Training accuracy: ~95%
-
-    Validation accuracy: ~90%
-
     Test accuracy: ~90%
 
 Training history visualization:
