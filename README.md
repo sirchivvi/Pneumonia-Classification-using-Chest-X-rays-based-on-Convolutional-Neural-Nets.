@@ -85,4 +85,4 @@ The model achieves:
     Test accuracy: ~90%
 
 Training history visualization:
-https://images/training_metrics.png
+<img width="990" height="451" alt="Untitled" src="https://github.com/user-attachments/assets/34a5482f-ec6c-4527-8f62-13e07b6b9d35" />
