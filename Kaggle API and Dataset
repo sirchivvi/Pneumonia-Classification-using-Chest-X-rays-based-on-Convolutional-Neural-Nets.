@@ -1,0 +1,17 @@
+# Install Kaggle API
+!pip install -q kaggle
+
+# Upload your kaggle.json file
+from google.colab import files
+files.upload()  # Upload your kaggle.json API key
+
+# Move the key to the proper directory
+!mkdir -p ~/.kaggle
+!cp kaggle.json ~/.kaggle/
+!chmod 600 ~/.kaggle/kaggle.json
+
+# Download the dataset
+!kaggle datasets download -d paultimothymooney/chest-xray-pneumonia
+
+# Unzip the dataset
+!unzip chest-xray-pneumonia.zip -d chest_xray
