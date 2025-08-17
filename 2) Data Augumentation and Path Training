@@ -1,0 +1,44 @@
+import tensorflow as tf
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+
+# Define paths
+train_dir = '/content/chest_xray/chest_xray/train'
+val_dir = '/content/chest_xray/chest_xray/val'
+test_dir = '/content/chest_xray/chest_xray/test'
+
+# Data augmentation for training
+train_datagen = ImageDataGenerator(
+    rescale=1./255,
+    rotation_range=20,
+    width_shift_range=0.2,
+    height_shift_range=0.2,
+    shear_range=0.2,
+    zoom_range=0.2,
+    horizontal_flip=True,
+    fill_mode='nearest'
+)
+
+# Validation and test generators (only rescaling)
+val_test_datagen = ImageDataGenerator(rescale=1./255)
+
+# Create generators
+train_generator = train_datagen.flow_from_directory(
+    train_dir,
+    target_size=(150, 150),
+    batch_size=32,
+    class_mode='binary'
+)
+
+val_generator = val_test_datagen.flow_from_directory(
+    val_dir,
+    target_size=(150, 150),
+    batch_size=32,
+    class_mode='binary'
+)
+
+test_generator = val_test_datagen.flow_from_directory(
+    test_dir,
+    target_size=(150, 150),
+    batch_size=32,
+    class_mode='binary'
+)
