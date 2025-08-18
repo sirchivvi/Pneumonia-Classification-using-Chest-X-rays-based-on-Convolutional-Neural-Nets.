@@ -1,8 +1,5 @@
 Pneumonia Classification from Chest X-rays using CNN
 
-https://img.shields.io/badge/Pneumonia-Detection-red
-https://img.shields.io/badge/Deep-Learning-blue
-https://img.shields.io/badge/CNN-Architecture-green
 
 This project implements a Convolutional Neural Network (CNN) to classify chest X-ray images as either normal or showing signs of pneumonia. The model achieves approximately 90% accuracy in detecting pneumonia from radiographic images.
 Table of Contents
